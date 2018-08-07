@@ -28,6 +28,11 @@ public class MyCircleImageView extends android.support.v7.widget.AppCompatImageV
 
     }
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
     public MyCircleImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
@@ -54,7 +59,6 @@ public class MyCircleImageView extends android.support.v7.widget.AppCompatImageV
         Paint paint = new Paint();
         int height = bitmap.getHeight();
         int width = bitmap.getWidth();
-        bitmap.setConfig(Bitmap.Config.ARGB_8888);
         BitmapShader shader = new BitmapShader(bitmap, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP);
 
         float scaleX, scaleY;
